@@ -1,6 +1,7 @@
-from flask import Flask, jsonify,render_template,request
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, jsonify,render_template,request,redirect,url_for,session
 import config
+from models import User
+from exts import db
 app = Flask(__name__)
 app.config.from_object(config)
 # db = SQLAlchemy(app)
@@ -10,21 +11,47 @@ app.config.from_object(config)
 #     title = db.Column(db.String(100),nullable=False)
 #     content = db.Column(db.Text,nullable=False)
 # db.create_all()
-
+db.init_app(app)
 @app.route('/')
-def hello_world():
+def index():
     return render_template('index.html')
 @app.route('/login/',methods=['GET','POST'])
 def login():
     if request.method == 'GET':
         return render_template('login.html')
     else:
-        pass
+        telephone = request.form.get('telephone')
+        password = request.form.get('password')
+
+        user = User.query.filter(User.telephon == telephone,User.password == password).first()
+        if user:
+            session['user_id'] = user.id
+            session.permanent = True
+            return redirect(url_for('index'))
+        else:
+            return "手机号或密码错误！"
+
 @app.route('/regist/',methods=['GET','POST'])
 def regist():
     if request.method == 'GET':
         return render_template('regist.html')
     else:
+        telephon = request.form.get('telephone')
+        username = request.form.get('username')
+        password1 = request.form.get('password1')
+        password2 = request.form.get('password2')
+
+        user = User.query.filter(User.telephon == telephon).first()
+        if user:
+            return "该手机号已被注册，请更换手机号!"
+        else:
+            if password1 != password2:
+                return "两次输入的密码不一致，请核对后重新输入！"
+            else:
+                user = User(telephon = telephon,username =username,password = password1)
+                db.session.add(user)
+                db.session.commit()
+                return redirect(url_for('login'))
         pass
 @app.route('/hello')
 def hello():

@@ -5,7 +5,7 @@ DEBUG = True
 SECRET_KEY = os.urandom(24)
 HOSTNAME = '127.0.0.1'
 PORT = '3306'
-DATABASE = 'test'
+DATABASE = 'flaskdemo'
 USERNAME = 'root'
 PASSWORD = '1234'
 DB_URI = 'mysql://{}:{}@{}:{}/{}?charset=utf8'.format(USERNAME,PASSWORD,
