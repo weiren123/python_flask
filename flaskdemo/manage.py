@@ -3,7 +3,7 @@ from flask_script import Manager
 from flask_migrate import Migrate,MigrateCommand
 from flaskdemo import app
 from exts import db
-from models import User
+from models import User,Question
 manager = Manager(app)
 # 使用Migrate绑定app/db
 migrate = Migrate(app,db)

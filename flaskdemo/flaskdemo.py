@@ -52,7 +52,23 @@ def regist():
                 db.session.add(user)
                 db.session.commit()
                 return redirect(url_for('login'))
-        pass
+@app.context_processor
+def my_context_processor():
+    user_id = session.get('user_id')
+    if user_id:
+        user = User.query.filter(User.id == user_id).first()
+        if user:
+            return {'user':user}
+    return {}
+@app.route('/logout/')
+def logout():
+    session.pop('user_id')
+    return redirect(url_for('login'))
+@app.route('/question')
+def question():
+    if request.method == 'GET':
+         return render_template('question.html')
+    pass
 @app.route('/hello')
 def hello():
     # article = Article(title = 'aaa',content = 'bbb')
