@@ -7,7 +7,7 @@ class User(db.Model):
     username = db.Column(db.Text(100),nullable=False)
     password = db.Column(db.Text(100),nullable=False)
 class Question(db.Model):
-    __table__ = 'question'
+    __tablename__ = 'question'
     id = db.Column(db.Integer(),primary_key=True,autoincrement=True)
     title = db.Column(db.String(100),nullable=False)
     content = db.Column(db.Text,nullable=False)

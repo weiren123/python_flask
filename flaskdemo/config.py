@@ -1,5 +1,6 @@
 #encoding:utf-8
 import os
+from flask_login import LoginManager
 DEBUG = True
 # 随机产生24个字节的字符串
 SECRET_KEY = os.urandom(24)
@@ -12,3 +13,4 @@ DB_URI = 'mysql://{}:{}@{}:{}/{}?charset=utf8'.format(USERNAME,PASSWORD,
 HOSTNAME,PORT,DATABASE)
 SQLALCHEMY_DATABASE_URI = DB_URI
 SQLALCHEMY_TRACK_MODIFICATIONS = True
+

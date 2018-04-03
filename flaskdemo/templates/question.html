@@ -7,7 +7,7 @@
 
 {% block main %}
     <h3 class="page-title">发表问答</h3>
-    <form action="#" method="post">
+    <form action="{{url_for('question')}}" method="post">
         <div class="form-container">
             <div class="form-group">
                 <input type="text" placeholder="请输入标题" name="title" class="form-control">

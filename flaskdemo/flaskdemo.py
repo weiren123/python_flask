@@ -1,6 +1,7 @@
-from flask import Flask, jsonify,render_template,request,redirect,url_for,session
+from flask import Flask, jsonify,render_template,request,url_for,session,redirect,g
+from functools import wraps
 import config
-from models import User
+from models import User,Question
 from exts import db
 app = Flask(__name__)
 app.config.from_object(config)
@@ -12,9 +13,30 @@ app.config.from_object(config)
 #     content = db.Column(db.Text,nullable=False)
 # db.create_all()
 db.init_app(app)
+
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if g.user is None:
+            return redirect(url_for('login', next=request.url))
+        return f(*args, **kwargs)
+    return decorated_function
+@app.before_request
+def before_request():
+    user_id = session.get('user_id')
+    if user_id:
+        user = User.query.filter(User.id == user_id).first
+        if user:
+            g.user = user
+    else:
+        g.user = None
 @app.route('/')
 def index():
-    return render_template('index.html')
+    content = {
+        'questions':Question.query.all()
+    }
+    return render_template('index.html',**content)
 @app.route('/login/',methods=['GET','POST'])
 def login():
     if request.method == 'GET':
@@ -64,11 +86,29 @@ def my_context_processor():
 def logout():
     session.pop('user_id')
     return redirect(url_for('login'))
-@app.route('/question')
+@app.route('/question/',methods=['GET',"POST"])
+@login_required
 def question():
     if request.method == 'GET':
          return render_template('question.html')
-    pass
+    else:
+        title = request.form.get('title')
+        content = request.form.get('content')
+
+        question = Question(title=title, content=content)
+        db.session.add(question)
+        db.session.commit()
+        return redirect(url_for('index'))
+# @app.route('/answer/',methods=['GET,POST'])
+# def answer():
+#     if request.method == 'GET'
+#     title = request.form.get('title')
+#     content = request.form.get('content')
+#
+#     question = Question(title = title,content =content,create_time =datetime.now)
+#     db.session.add(question)
+#     db.session.commit()
+#     return redirect(url_for('index'))
 @app.route('/hello')
 def hello():
     # article = Article(title = 'aaa',content = 'bbb')
@@ -94,4 +134,5 @@ def startimage():
     return jsonify(response), 200
 #
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    # app.run(host='0.0.0.0', port=5000)
+    app.run()
