@@ -1,7 +1,7 @@
 from flask import Flask, jsonify,render_template,request,url_for,session,redirect,g
 from functools import wraps
 import config
-from models import User,Question
+from models import User,Question,Answer
 from exts import db
 app = Flask(__name__)
 app.config.from_object(config)
@@ -99,16 +99,25 @@ def question():
         db.session.add(question)
         db.session.commit()
         return redirect(url_for('index'))
-# @app.route('/answer/',methods=['GET,POST'])
-# def answer():
-#     if request.method == 'GET'
-#     title = request.form.get('title')
-#     content = request.form.get('content')
-#
-#     question = Question(title = title,content =content,create_time =datetime.now)
-#     db.session.add(question)
-#     db.session.commit()
-#     return redirect(url_for('index'))
+@app.route('/detail/<question_id>/')
+def detail(question_id):
+    question = Question.query.filter(Question.id == question_id).first()
+
+    return render_template('detail.html',question = question)
+@app.route('/add_answer/',methods=['POST'])
+def add_answer():
+    add_answer = request.form.get('answer_content')
+    question_id = request.form.get('question_id')
+
+    answer = Answer(content =add_answer)
+    user_id = session.get('user_id')
+    user = User.query.filter(User.id == user_id).first()
+    answer.autor = user
+    question = Question.query.filter(Question.id == question_id).first()
+    answer.question = question
+    db.session.add(answer)
+    db.session.commit()
+    return redirect(url_for('detail',question_id = question_id))
 @app.route('/hello')
 def hello():
     # article = Article(title = 'aaa',content = 'bbb')
