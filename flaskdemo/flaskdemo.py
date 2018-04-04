@@ -1,5 +1,9 @@
-from flask import Flask, jsonify,render_template,request,url_for,session,redirect,g
+from PIL import Image
+from flask import Flask, jsonify, render_template, request, url_for, session, redirect, g, send_file
 from functools import wraps
+
+from io import BytesIO
+
 import config
 from models import User,Question,Answer
 from exts import db
@@ -94,8 +98,8 @@ def question():
     else:
         title = request.form.get('title')
         content = request.form.get('content')
-
-        question = Question(title=title, content=content)
+        user_id = session.get('user_id')
+        question = Question(title=title, content=content,autor_id = user_id)
         db.session.add(question)
         db.session.commit()
         return redirect(url_for('index'))
@@ -105,6 +109,7 @@ def detail(question_id):
 
     return render_template('detail.html',question = question)
 @app.route('/add_answer/',methods=['POST'])
+@login_required
 def add_answer():
     add_answer = request.form.get('answer_content')
     question_id = request.form.get('question_id')
@@ -118,6 +123,12 @@ def add_answer():
     db.session.add(answer)
     db.session.commit()
     return redirect(url_for('detail',question_id = question_id))
+# @app.route('/answers/')
+# def answers():
+#     content = {
+#         'answers':Answer.query.all()
+#     }
+#     return render_template('detail.html',**content)
 @app.route('/hello')
 def hello():
     # article = Article(title = 'aaa',content = 'bbb')
@@ -141,7 +152,13 @@ def startimage():
         'img': "https://dn-shimo-image.qbox.me/ZiiJ3jowWLEHccHq/image.png"
     }
     return jsonify(response), 200
-#
+@app.route("/image")
+def test_qrcode():
+    img = Image.open('static/image/v1.jpg')
+    byte_io = BytesIO()
+    img.save(byte_io, 'PNG')
+    byte_io.seek(0)
+    return send_file(byte_io, mimetype='image/png')
 if __name__ == '__main__':
     # app.run(host='0.0.0.0', port=5000)
     app.run()

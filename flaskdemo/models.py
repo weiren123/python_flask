@@ -20,6 +20,7 @@ class Answer(db.Model):
     id = db.Column(db.Integer(), primary_key=True, autoincrement=True)
     content = db.Column(db.Text,nullable=False)
     question_id = db.Column(db.Integer,db.ForeignKey('question.id'))
-    author_id = db.Column(db.Integer,db.ForeignKey('user.id'))
-
+    autor_id = db.Column(db.Integer,db.ForeignKey('user.id'))
+    create_time = db.Column(db.DateTime, default=datetime.now)
     question = db.relationship('Question',backref =db.backref('answers'))
+    autor = db.relationship('User',backref = db.backref('answers'))

@@ -26,4 +26,16 @@
             <button class="btn btn-primary">立即评论</button>
         </div>
     </form>
+    <ul>
+        {% for answer in question.answers %}
+        <li>
+           <div class="user-info">
+               <img src="">
+               <span class="username" >{{answer.autor.username}}</span>
+               <span class="create-time" >{{answer.create_time}}</span>
+           </div>
+            <p class="answer-content">{{answer.content}}</p>
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
