@@ -13,7 +13,7 @@ class Question(db.Model):
     content = db.Column(db.Text,nullable=False)
     create_time = db.Column(db.DateTime,default=datetime.now)
     autor_id = db.Column(db.Integer,db.ForeignKey('user.id'))
-    answer_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    # answer_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     autor =db.relationship('User',backref = db.backref('questions'))
 
 class Answer(db.Model):

@@ -87,14 +87,17 @@ def logout():
 @login_required
 def question():
     if request.method == 'GET':
-         return render_template('question.html')
+         return render_template('question.html',answer_id = '2' )
     else:
+        answer_id = request.form.get('answer_id')
+        print("answer_id:"+answer_id)
         title = request.form.get('title')
         content = request.form.get('content')
         user_id = session.get('user_id')
         question = Question(title=title, content=content,autor_id = user_id)
         db.session.add(question)
         db.session.commit()
+
         return redirect(url_for('index'))
 @app.route('/detail/<question_id>/')
 def detail(question_id):
