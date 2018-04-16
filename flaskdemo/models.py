@@ -1,11 +1,11 @@
 from exts import db
 from datetime import datetime
-class User(db.Model):
-    __tablename__ = 'user'
-    id = db.Column(db.Integer(),primary_key=True,autoincrement=True)
-    telephon = db.Column(db.String(50),nullable=False)
-    username = db.Column(db.Text(100),nullable=False)
-    password = db.Column(db.Text(100),nullable=False)
+# class User(db.Model):
+#     __tablename__ = 'user'
+#     id = db.Column(db.Integer(),primary_key=True,autoincrement=True)
+#     telephon = db.Column(db.String(50),nullable=False)
+#     username = db.Column(db.Text(100),nullable=False)
+#     password = db.Column(db.Text(100),nullable=False)
 class Question(db.Model):
     __tablename__ = 'question'
     id = db.Column(db.Integer(),primary_key=True,autoincrement=True)
@@ -13,6 +13,7 @@ class Question(db.Model):
     content = db.Column(db.Text,nullable=False)
     create_time = db.Column(db.DateTime,default=datetime.now)
     autor_id = db.Column(db.Integer,db.ForeignKey('user.id'))
+    # answer_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     autor =db.relationship('User',backref = db.backref('questions'))
 
 class Answer(db.Model):
@@ -24,3 +25,13 @@ class Answer(db.Model):
     create_time = db.Column(db.DateTime, default=datetime.now)
     question = db.relationship('Question',backref =db.backref('answers'))
     autor = db.relationship('User',backref = db.backref('answers'))
+class User(db.Model):
+    __tablename__ = 'user'
+    id = db.Column(db.Integer(),primary_key=True,autoincrement=True)
+    username = db.Column(db.Text(100),nullable=False)
+    age = db.Column(db.String(100),nullable=False)
+    telephon = db.Column(db.String(100),nullable=False)
+    password = db.Column(db.Text(100),nullable=False)
+    usertype = db.Column(db.String(100),nullable=False)
+    sex = db.Column(db.Text(100),nullable=False)
+    avatar = db.Column(db.Text,nullable=True)

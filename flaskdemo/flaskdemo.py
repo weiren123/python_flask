@@ -9,13 +9,6 @@ from models import User,Question,Answer
 from exts import db
 app = Flask(__name__)
 app.config.from_object(config)
-# db = SQLAlchemy(app)
-# class Article(db.Model):
-#     __tablename__ = 'article'
-#     id = db.Column(db.Integer,primary_key=True,autoincrement=True)
-#     title = db.Column(db.String(100),nullable=False)
-#     content = db.Column(db.Text,nullable=False)
-# db.create_all()
 db.init_app(app)
 
 
@@ -66,7 +59,6 @@ def regist():
         username = request.form.get('username')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
-
         user = User.query.filter(User.telephon == telephon).first()
         if user:
             return "该手机号已被注册，请更换手机号!"
@@ -74,7 +66,8 @@ def regist():
             if password1 != password2:
                 return "两次输入的密码不一致，请核对后重新输入！"
             else:
-                user = User(telephon = telephon,username =username,password = password1)
+                user = User(telephon = telephon,username =username,password = password1,age = "18",usertype = "1",
+                            sex = "0" )
                 db.session.add(user)
                 db.session.commit()
                 return redirect(url_for('login'))
@@ -94,14 +87,17 @@ def logout():
 @login_required
 def question():
     if request.method == 'GET':
-         return render_template('question.html')
+         return render_template('question.html',answer_id = '2' )
     else:
+        answer_id = request.form.get('answer_id')
+        print("answer_id:"+answer_id)
         title = request.form.get('title')
         content = request.form.get('content')
         user_id = session.get('user_id')
         question = Question(title=title, content=content,autor_id = user_id)
         db.session.add(question)
         db.session.commit()
+
         return redirect(url_for('index'))
 @app.route('/detail/<question_id>/')
 def detail(question_id):
@@ -144,12 +140,15 @@ def hello():
     # db.session.commit()
 
     return 'Hello, World1111'
-@app.route('/startimage/image.png')
+@app.route('/startimage/')
 def startimage():
-
+    img = Image.open('static/image/v1.jpg')
+    byte_io = BytesIO()
+    img.save(byte_io, 'PNG')
+    byte_io.seek(0)
     response = {
         'text': "success",
-        'img': "https://dn-shimo-image.qbox.me/ZiiJ3jowWLEHccHq/image.png"
+        'img': byte_io
     }
     return jsonify(response), 200
 @app.route("/image")
