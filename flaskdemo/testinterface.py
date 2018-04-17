@@ -34,6 +34,30 @@ def index():
         'questions':Question.query.all()
     }
     return render_template('index.html',**content)
+@app.route('/questionlist/',methods=['POST'])
+def getQuestionList():
+    # userid = session.get('user_id')
+    userid = request.form.get('user_id')
+    question = Question.query.filter(Question.answer_id == userid).all()
+    if question:
+        responses = []
+        for questionInfo in question:
+            response = {
+                'code': "success"
+            }
+            response['body'] ={
+                "title": questionInfo.title,
+                "content": questionInfo.content,
+            }
+            responses.append(response)
+        return jsonify(responses), 200
+    else:
+        response = {
+            "code": "error",
+            "msg": "没有问题",
+        }
+        return jsonify(response), 200
+
 
 @app.route('/userinfo_list/')
 def getUserList():
@@ -61,7 +85,6 @@ def getUserList():
             "msg": "没有用户"
         }
         return jsonify(response), 200
-    return "hello"
 @app.route('/login/',methods=['POST'])
 def login():
     if request.method == 'POST':
@@ -128,22 +151,21 @@ def my_context_processor():
 def logout():
     session.pop('user_id')
     return redirect(url_for('login'))
-@app.route('/question/',methods=['GET',"POST"])
-@login_required
+@app.route('/question/',methods=["POST"])
+# @login_required
 def question():
-    if request.method == 'GET':
-         return render_template('question.html')
-    else:
         answer_id =request.form.get('answer_id')
-        print("answer_id:"+str(answer_id))
         title = request.form.get('title')
         content = request.form.get('content')
         user_id = session.get('user_id')
         question = Question(title=title, content=content,autor_id = user_id,answer_id = answer_id)
         db.session.add(question)
         db.session.commit()
-
-        return redirect(url_for('index'))
+        response = {
+            'code': "success",
+            'msg': "发送成功！"
+        }
+        return jsonify(response),200
 @app.route('/detail/<question_id>/')
 def detail(question_id):
     question = Question.query.filter(Question.id == question_id).first()
@@ -152,6 +174,7 @@ def detail(question_id):
 @app.route('/add_answer/',methods=['POST'])
 @login_required
 def add_answer():
+
     add_answer = request.form.get('answer_content')
     question_id = request.form.get('question_id')
 
