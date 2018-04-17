@@ -34,6 +34,34 @@ def index():
         'questions':Question.query.all()
     }
     return render_template('index.html',**content)
+
+@app.route('/userinfo_list/')
+def getUserList():
+    # user_id = session.get('user_id')
+    user = User.query.filter(User.usertype== '1').all()
+    if user:
+        responses =[]
+        for userinfo in user:
+            response = {
+                "code":"success",
+                "msg":"成功"
+            }
+            response['body'] = {
+                'username': userinfo.username,
+                'age': userinfo.age,
+                'avatar': userinfo.avatar,
+                'usertype': userinfo.usertype,
+                'userid': userinfo.id
+             }
+            responses.append(response)
+        return jsonify(responses),200
+    else:
+        response = {
+            "code": "error",
+            "msg": "没有用户"
+        }
+        return jsonify(response), 200
+    return "hello"
 @app.route('/login/',methods=['POST'])
 def login():
     if request.method == 'POST':
