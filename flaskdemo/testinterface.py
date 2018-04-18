@@ -16,7 +16,12 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if g.user is None:
-            return redirect(url_for('login', next=request.url))
+            response = {
+                'code': "302",
+                'msg':"login"
+            }
+            # return redirect(url_for('login', next=request.url))
+            return jsonify(response),200
         return f(*args, **kwargs)
     return decorated_function
 @app.before_request
@@ -43,6 +48,7 @@ def getQuestionList():
         responses = []
         for questionInfo in question:
             response = {
+
                 'code': "success"
             }
             response['body'] ={
@@ -62,32 +68,34 @@ def getQuestionList():
 @app.route('/userinfo_list/')
 def getUserList():
     # user_id = session.get('user_id')
+
     user = User.query.filter(User.usertype== '1').all()
     if user:
-        responses =[]
+        response = {
+            "code": "success",
+            "msg": "成功"
+        }
+        data =[]
         for userinfo in user:
-            response = {
-                "code":"success",
-                "msg":"成功"
-            }
-            response['body'] = {
+            item = {
                 'username': userinfo.username,
                 'age': userinfo.age,
                 'avatar': userinfo.avatar,
                 'usertype': userinfo.usertype,
                 'userid': userinfo.id
              }
-            responses.append(response)
-        return jsonify(responses),200
+            data.append(item)
+        response['body'] = data
+        return jsonify(response), 200
     else:
         response = {
             "code": "error",
             "msg": "没有用户"
         }
         return jsonify(response), 200
-@app.route('/login/',methods=['POST'])
+@app.route('/login/',methods=['GET','POST'])
 def login():
-    if request.method == 'POST':
+    # if request.method == 'POST'| request.module == 'GET':
         telephone = request.form.get('telephone')
         password = request.form.get('password')
 
@@ -151,8 +159,8 @@ def my_context_processor():
 def logout():
     session.pop('user_id')
     return redirect(url_for('login'))
-@app.route('/question/',methods=["POST"])
-# @login_required
+@app.route('/question/',methods=['POST'])
+@login_required
 def question():
         answer_id =request.form.get('answer_id')
         title = request.form.get('title')
