@@ -1,5 +1,5 @@
 from PIL import Image
-from flask import Flask, jsonify, render_template, request, url_for, session, redirect, g, send_file
+from flask import Flask, jsonify, render_template, request, url_for, session, redirect, g, send_file, Response
 from functools import wraps
 
 from io import BytesIO
@@ -86,6 +86,8 @@ def getUserList():
              }
             data.append(item)
         response['body'] = data
+        resp = Response("")
+        resp.headers['Access-Control-Allow-Origin'] = '*'
         return jsonify(response), 200
     else:
         response = {
