@@ -88,7 +88,7 @@ def getUserList():
         response['body'] = data
         resp = Response("")
         resp.headers['Access-Control-Allow-Origin'] = '*'
-        return jsonify(response), 200
+        return jsonify(response), 200,{'Content-Type': 'application/json'}
     else:
         response = {
             "code": "error",
