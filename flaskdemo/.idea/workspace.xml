@@ -2,6 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b8b8565-248d-440f-900b-80315094a25b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/00218F966B8AD6266209BF82833D85F8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/0440A2FAB6479C21731BA032FA362ED4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/08894C1C1B6D7AA8E29B5B8F2A1E3D0E.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/0C43724A20AE71E105FD96F4DE5F1E4B.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/0DBDA6C1C21F17ADFEE438CD6431EB34.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/1C24F4AFF26CBF4750355D5027A73DDC.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/25B3E349597FB751AA0F6078FAEBF2C6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/39CB683E82F94DE0710ACD648A8FE7CF.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/3AF4C975D034A9AF294293B6E23B9D93.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/3F7767C2CE7E9E2A032122FC27103832.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/43A731659D8449E854DFCB780E6D5382.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/44303B6AC9C087E22B04143109CB0444.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/453193CA8A40A12C66CA7BCFCC2C587E.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/5F15176E03CB69091BDB1354F5E984C2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/65DFF506C954BCA560D498F94610CB1E.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/7EBDBD4E5AAB002BCCCA952F737E6DF3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/81D4FA47ECAF307130970DC8B7A9C1D4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/826C167411A054293A966C9B7533735A.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/88DFF656E350E38EBA42DE35CC110EE9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/8F818B89B7084141E068F2D57AB41DC6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/A2BA9AD24B81D0CEC028AFE175591403.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/AF4B6CE86AD3F565957FE7EF86AC4FE7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/B2626AC781E22565D10150B361F541F4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/B3205A41C2D4CE0926FF6E88F7D6E990.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/C134584B7EDCD54E7B9E278514FBA3B2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/CDAA7290ACDFAAD6E9EDCA13882576D9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/DD074A4D420AF9E0D06392CB47C8EDF2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/E3F1898AACFB916CA023E6B50375EEBA.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/EC796E4E51A939CB9A7EE537CF9A6B58.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/F0B65DE59A670836204589F5B876353C.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/F356365E3F10B3EDA315E87E22AE29AB.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/F8750E3098991149DE823600559943D6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/FEA96BE5F08B3C44948B73944BC23152.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/sys_8204DEBE69E8FE5B001DB95D4C987A9F.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/sys_83E755460B5562C56E4F049574B6F756.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/sys_CDFCFB5D06FC1902CE8E936F4B1D222C.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_00F5D745F28C2CD2CD25D2E6610F94BA.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_0330AEEF4410579E888E6AD8244D1591.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_0389BA77F22DFCE00C7C4BAB6DC9877D.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_2256EF887021C6D4EAB742EE71B7BD11.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_27E74E1454477BA4F1F3C936C4FD5A0C.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_2D05FAEE72022C86FDBEBD08019981B8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_2FEC16BA72F1F50706F035DD12856C1D.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_432C319A3C9D3048FFEF94378094C06B.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_46831D6316D84E826CD2BC27110F4783.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_5D3150454BF5730B62D079A33AE92415.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_65AE5D31A4BDC7C8D3B5A9D78D65A322.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_74CD9A029115DE5D4C1E5BCCD543DC87.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_76E50FCB2DE888464614362B79F6E449.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_7D588A41F7D9B773C54AB435F5C14DBB.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_7F06AF4CD072F74288D9436D5C60A547.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_85FD72788D7D13CBAAA5BF0E7FD845CF.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_8773E344F3DA89B4EEAB4D12C82A2B2D.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_8A32B4C890C5452C2DC303959EF38F4A.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_9A7F5378EACE3BBC3A27D14D3F35AA09.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_B545F2854E0EBE301DBD3B02F1A9171D.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_CC1718FBCD325E780E89923ACB7973D6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_DDAC45D6B5A3CEBEE523AFCF6AB8FE0F.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/image/troop_E0FCD513B1B6C581D22D3F32D935DBCE.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testinterface.py" afterPath="$PROJECT_DIR$/testinterface.py" />
     </list>
@@ -14,7 +74,8 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/flaskdemo$flaskdemo.coverage" NAME="flaskdemo Coverage Results" MODIFIED="1523932506421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/flaskdemo$testinterface.coverage" NAME="testinterface Coverage Results" MODIFIED="1524046266017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flaskdemo$testinterface.coverage" NAME="testinterface Coverage Results" MODIFIED="1524101570837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flaskdemo$test.coverage" NAME="test Coverage Results" MODIFIED="1524122812506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/flaskdemo$blockchain.coverage" NAME="blockchain Coverage Results" MODIFIED="1519954071307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
@@ -22,7 +83,7 @@
       <file leaf-file-name="flaskdemo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskdemo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
+            <state relative-caret-position="0">
               <caret line="38" column="31" lean-forward="false" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -56,8 +117,8 @@
       <file leaf-file-name="testinterface.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testinterface.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+            <state relative-caret-position="325">
+              <caret line="76" column="23" lean-forward="true" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -68,7 +129,7 @@
       <file leaf-file-name="datastructures.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/werkzeug/datastructures.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
+            <state relative-caret-position="26750">
               <caret line="1081" column="0" lean-forward="false" selection-start-line="1081" selection-start-column="0" selection-end-line="1081" selection-end-column="0" />
               <folding />
             </state>
@@ -115,24 +176,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/werkzeug/debug/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7500">
-              <caret line="323" column="35" lean-forward="false" selection-start-line="323" selection-start-column="35" selection-end-line="323" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -158,6 +209,7 @@
         <option value="$PROJECT_DIR$/models.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/testinterface.py" />
+        <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
   </component>
@@ -168,8 +220,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="95" />
-    <option name="y" value="33" />
+    <option name="x" value="28" />
+    <option name="y" value="22" />
     <option name="width" value="1400" />
     <option name="height" value="820" />
   </component>
@@ -189,6 +241,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,7 +264,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -233,7 +285,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.testinterface">
+  <component name="RunManager" selected="Python.test">
     <configuration name="blockchain" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -270,6 +322,24 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flaskdemo" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="testinterface" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -288,16 +358,18 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.flaskdemo" />
       <item index="1" class="java.lang.String" itemvalue="Python.blockchain" />
       <item index="2" class="java.lang.String" itemvalue="Python.testinterface" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.testinterface" />
-        <item index="1" class="java.lang.String" itemvalue="Python.flaskdemo" />
-        <item index="2" class="java.lang.String" itemvalue="Python.blockchain" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.testinterface" />
+        <item index="2" class="java.lang.String" itemvalue="Python.flaskdemo" />
+        <item index="3" class="java.lang.String" itemvalue="Python.blockchain" />
       </list>
     </recent_temporary>
   </component>
@@ -375,19 +447,26 @@
       <option name="project" value="LOCAL" />
       <updated>1524046335298</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="接口实现">
+      <created>1524047143411</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1524047143411</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21401028" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21658097" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11081081" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32297298" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3635135" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -467,21 +546,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/exts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -841,7 +905,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flaskdemo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
+        <state relative-caret-position="0">
           <caret line="38" column="31" lean-forward="false" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
@@ -858,16 +922,29 @@
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/werkzeug/datastructures.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
+        <state relative-caret-position="26750">
           <caret line="1081" column="0" lean-forward="false" selection-start-line="1081" selection-start-column="0" selection-end-line="1081" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/image/v1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testinterface.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+        <state relative-caret-position="325">
+          <caret line="76" column="23" lean-forward="true" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>

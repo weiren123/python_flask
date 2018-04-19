@@ -45,18 +45,19 @@ def getQuestionList():
     userid = request.form.get('user_id')
     question = Question.query.filter(Question.answer_id == userid).all()
     if question:
-        responses = []
+        response = {
+            'code': "success",
+            "msg": "成功"
+        }
+        data = []
         for questionInfo in question:
-            response = {
-
-                'code': "success"
-            }
-            response['body'] ={
+            item = {
                 "title": questionInfo.title,
                 "content": questionInfo.content,
             }
-            responses.append(response)
-        return jsonify(responses), 200
+            data.append(item)
+            response['body'] = data
+        return jsonify(response), 200
     else:
         response = {
             "code": "error",
