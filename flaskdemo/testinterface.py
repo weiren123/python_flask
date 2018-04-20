@@ -141,7 +141,7 @@ def regist():
                 return jsonify(response),200
             else:
                 user = User(telephon = telephon,username =username,password = password1,age = "18",usertype = "1",
-                            sex = "0" )
+                            sex = "0",birthday = "1991-08-09" )
                 db.session.add(user)
                 db.session.commit()
                 response = {

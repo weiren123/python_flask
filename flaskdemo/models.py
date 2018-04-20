@@ -35,3 +35,5 @@ class User(db.Model):
     usertype = db.Column(db.String(100),nullable=False)
     sex = db.Column(db.Text(100),nullable=False)
     avatar = db.Column(db.Text,nullable=True)
+    birthday =db.Column(db.String(100),nullable=False)
+    userbgimg = db.Column(db.Text,nullable=True)
