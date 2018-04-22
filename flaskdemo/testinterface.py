@@ -83,7 +83,9 @@ def getUserList():
                 'age': userinfo.age,
                 'avatar': userinfo.avatar,
                 'usertype': userinfo.usertype,
-                'userid': userinfo.id
+                'userid': userinfo.id,
+                'sex': userinfo.sex,
+                'birthday': userinfo.birthday
              }
             data.append(item)
         response['body'] = data
@@ -163,12 +165,13 @@ def logout():
     session.pop('user_id')
     return redirect(url_for('login'))
 @app.route('/question/',methods=['POST'])
-@login_required
+# @login_required
 def question():
         answer_id =request.form.get('answer_id')
         title = request.form.get('title')
         content = request.form.get('content')
-        user_id = session.get('user_id')
+        user_id = request.form.get('user_id')
+        # user_id = session.get('user_id')
         question = Question(title=title, content=content,autor_id = user_id,answer_id = answer_id)
         db.session.add(question)
         db.session.commit()
@@ -176,28 +179,54 @@ def question():
             'code': "success",
             'msg': "发送成功！"
         }
-        return jsonify(response),200
+        return jsonify(response),200,{'Content-Type': 'application/json'}
 @app.route('/detail/<question_id>/')
 def detail(question_id):
-    question = Question.query.filter(Question.id == question_id).first()
-
-    return render_template('detail.html',question = question)
+    questions = Question.query.filter(Question.autor_id == question_id).all()
+    if questions:
+        response = {
+            "code": "success",
+            "msg": "成功"
+        }
+        data = []
+        for question in questions:
+            item = {
+                'title': question.title,
+                'content':question.content,
+                'create_time':question.create_time,
+                'user_id': question.autor_id,
+                'answer_id': question.answer_id,
+            }
+            data.append(item)
+        response['body'] = data
+        return jsonify(response), 200
+    else:
+        response = {
+            "code": "error",
+            "msg": "没有用户"
+        }
+        return jsonify(response), 200
 @app.route('/add_answer/',methods=['POST'])
-@login_required
+# @login_required
 def add_answer():
 
     add_answer = request.form.get('answer_content')
     question_id = request.form.get('question_id')
+    user_id = request.form.get('user_id')
 
     answer = Answer(content =add_answer)
-    user_id = session.get('user_id')
+    # user_id = session.get('user_id')
     user = User.query.filter(User.id == user_id).first()
     answer.autor = user
     question = Question.query.filter(Question.id == question_id).first()
     answer.question = question
     db.session.add(answer)
     db.session.commit()
-    return redirect(url_for('detail',question_id = question_id))
+    response = {
+        "code": "success",
+        "msg": "成功"
+    }
+    return jsonify(response), 200
 # @app.route('/answers/')
 # def answers():
 #     content = {
