@@ -122,12 +122,8 @@ def login():
 
 @app.route('/regist/',methods=['POST'])
 def regist():
-        # response = request.from_values('telephone')
-        # print(str(response))
         telephon = request.form.get('telephone')
-        username = request.form.get('username')
-        password1 = request.form.get('password1')
-        password2 = request.form.get('password2')
+        password = request.form.get('password')
         user = User.query.filter(User.telephon == telephon).first()
         if user:
             response = {
@@ -136,14 +132,7 @@ def regist():
             }
             return jsonify(response),200
         else:
-            if password1 != password2:
-                response = {
-                    'code': "error",
-                    'msg': "两次输入的密码不一致，请核对后重新输入！"
-                }
-                return jsonify(response),200
-            else:
-                user = User(telephon = telephon,username =username,password = password1,age = "18",usertype = "1",
+                user = User(telephon = telephon,username ="admin",password = password,age = "18",usertype = "1",
                             sex = "0",birthday = "1991-08-09" )
                 db.session.add(user)
                 db.session.commit()
@@ -165,7 +154,7 @@ def logout():
     session.pop('user_id')
     return redirect(url_for('login'))
 @app.route('/question/',methods=['POST'])
-# @login_required
+@login_required
 def question():
         answer_id =request.form.get('answer_id')
         title = request.form.get('title')
@@ -181,6 +170,7 @@ def question():
         }
         return jsonify(response),200,{'Content-Type': 'application/json'}
 @app.route('/detail/<question_id>/')
+@login_required
 def detail(question_id):
     questions = Question.query.filter(Question.autor_id == question_id).all()
     if questions:
@@ -207,7 +197,7 @@ def detail(question_id):
         }
         return jsonify(response), 200
 @app.route('/add_answer/',methods=['POST'])
-# @login_required
+@login_required
 def add_answer():
 
     add_answer = request.form.get('answer_content')
@@ -227,12 +217,34 @@ def add_answer():
         "msg": "成功"
     }
     return jsonify(response), 200
-# @app.route('/answers/')
-# def answers():
-#     content = {
-#         'answers':Answer.query.all()
-#     }
-#     return render_template('detail.html',**content)
+@app.route('/answers_list/',methods=['POST'])
+@login_required
+def answers():
+    question_id = request.form.get('question_id')
+    user_id = request.form.get('user_id')
+    answers =Answer.query.filter(Answer.question_id ==question_id,Answer.autor_id == user_id).all();
+    if answers:
+        response = {
+            "code": "success",
+            "msg": "成功"
+        }
+        data = []
+        for answer in answers:
+            item = {
+                'content': answer.content,
+                'create_time': answer.create_time,
+                'user_id': answer.autor_id,
+                'answer_id': answer.question_id,
+            }
+            data.append(item)
+        response['body'] = data
+        return jsonify(response), 200
+    else:
+        response = {
+            "code": "error",
+            "msg": "没有回答"
+        }
+        return jsonify(response), 200
 @app.route('/hello')
 def hello():
     # article = Article(title = 'aaa',content = 'bbb')
