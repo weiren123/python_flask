@@ -1,5 +1,5 @@
 from PIL import Image
-from flask import Flask, jsonify, render_template, request, url_for, session, redirect, g, send_file, Response
+from flask import Flask, jsonify, render_template, request, url_for, session, redirect, g, send_file, Response, json
 from functools import wraps
 
 from io import BytesIO
@@ -41,8 +41,8 @@ def index():
     return render_template('index.html',**content)
 @app.route('/questionlist/',methods=['POST'])
 def getQuestionList():
-    # userid = session.get('user_id')
-    userid = request.form.get('user_id')
+    userid = session.get('user_id')
+    # userid = request.form.get('user_id')
     question = Question.query.filter(Question.answer_id == userid).all()
     if question:
         response = {
@@ -89,9 +89,7 @@ def getUserList():
              }
             data.append(item)
         response['body'] = data
-        resp = Response("")
-        resp.headers['Access-Control-Allow-Origin'] = '*'
-        return jsonify(response), 200,{'Content-Type': 'application/json'}
+        return jsonify(response), 200
     else:
         response = {
             "code": "error",
@@ -112,6 +110,15 @@ def login():
                 'code': "success",
                 'msg': "登陆成功!"
             }
+            item = {
+                'user_id':user.id,
+                'username':user.username,
+                'age':user.age,
+                'avatar':user.avatar,
+                'usertypr':user.usertype,
+                'birthday':user.birthday
+            }
+            response['body'] = item
             return jsonify(response),200
         else:
             response = {
@@ -156,11 +163,14 @@ def logout():
 @app.route('/question/',methods=['POST'])
 @login_required
 def question():
-        answer_id =request.form.get('answer_id')
-        title = request.form.get('title')
-        content = request.form.get('content')
-        user_id = request.form.get('user_id')
-        # user_id = session.get('user_id')
+        # print(str(request.headers().))
+        data = request.data
+        strs = data.decode()
+        datas = json.loads(strs)
+        answer_id = datas['answer_id']
+        title = datas['title']
+        content = datas['content']
+        user_id = session.get('user_id')
         question = Question(title=title, content=content,autor_id = user_id,answer_id = answer_id)
         db.session.add(question)
         db.session.commit()
@@ -202,12 +212,14 @@ def add_answer():
 
     add_answer = request.form.get('answer_content')
     question_id = request.form.get('question_id')
-    user_id = request.form.get('user_id')
+    answer_id = request.form.get('answer_id')
 
-    answer = Answer(content =add_answer)
+    answer = Answer(content =add_answer,)
     # user_id = session.get('user_id')
-    user = User.query.filter(User.id == user_id).first()
-    answer.autor = user
+    # user_id = answer_id
+    # user = User.query.filter(User.id == user_id).first()
+    # answer.autor = user
+    answer.autor_id = answer_id
     question = Question.query.filter(Question.id == question_id).first()
     answer.question = question
     db.session.add(answer)
@@ -222,7 +234,10 @@ def add_answer():
 def answers():
     question_id = request.form.get('question_id')
     user_id = request.form.get('user_id')
+    print("question_id:"+question_id)
+    print("user_id:" + user_id)
     answers =Answer.query.filter(Answer.question_id ==question_id,Answer.autor_id == user_id).all();
+
     if answers:
         response = {
             "code": "success",
@@ -238,12 +253,14 @@ def answers():
             }
             data.append(item)
         response['body'] = data
+        print(response)
         return jsonify(response), 200
     else:
         response = {
             "code": "error",
             "msg": "没有回答"
         }
+        print(response)
         return jsonify(response), 200
 @app.route('/hello')
 def hello():
