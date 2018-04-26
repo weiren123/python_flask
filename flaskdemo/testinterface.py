@@ -1,9 +1,11 @@
 from PIL import Image
 from flask import Flask, jsonify, render_template, request, url_for, session, redirect, g, send_file, Response, json
 from functools import wraps
-
+from flask_wtf import FlaskForm
+from flask_wtf.file import FileField, FileRequired, FileAllowed
+from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
 from io import BytesIO
-
+from wtforms import SubmitField
 import config
 from models import User,Question,Answer
 from exts import db
@@ -11,6 +13,11 @@ app = Flask(__name__)
 app.config.from_object(config)
 db.init_app(app)
 
+
+
+photos = UploadSet('photos', IMAGES)
+configure_uploads(app, photos)
+patch_request_class(app)  # set maximum file size, default is 16MB
 
 def login_required(f):
     @wraps(f)
@@ -295,6 +302,37 @@ def test_qrcode():
     img.save(byte_io, 'PNG')
     byte_io.seek(0)
     return send_file(byte_io, mimetype='image/png')
+
+class UploadForm(FlaskForm):
+    photo = FileField(validators=[
+        FileAllowed(photos, u'只能上传图片！'),
+        FileRequired(u'文件未选择！')])
+    submit = SubmitField(u'上传')
+# http://flask-uploads.readthedocs.io/en/latest/
+@app.route('/uploadimg', methods=['GET', 'POST'])
+def flask_upload():
+    if request.method == 'GET':
+        form = UploadForm()
+        file_url = None
+        return render_template('test.html',form = form,file_url = file_url)
+    else:
+        filename = photos.save(request.files['photo'])
+        file_url = photos.url(filename)
+        response = {
+            'code': "success",
+            'msg': file_url
+        }
+        return jsonify(response), 200
+    # if form.validate_on_submit():
+    #
+    # else:
+    #     file_url = None
+    #     # response = {
+    #     #     'text': "error",
+    #     #     'img': "不成功"
+    #     # }
+    #     # return jsonify(response),200
+    # # return render_template('test.html',form=form, file_url=file_url)
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
     # app.run()
