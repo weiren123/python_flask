@@ -18,8 +18,7 @@ db.init_app(app)
 photos = UploadSet('photos', IMAGES)
 configure_uploads(app, photos)
 patch_request_class(app)  # set maximum file size, default is 16MB
-def create_app(f):
-    return app
+
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):

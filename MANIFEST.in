@@ -1,0 +1,2 @@
+recursive-include flaskdemo/templates *
+recursive-include flaskdemo/static *
