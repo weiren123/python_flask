@@ -16,3 +16,6 @@ SQLALCHEMY_TRACK_MODIFICATIONS = True
 SECRET_KEY = 'I have a dream'
 UPLOADED_PHOTOS_DEST= os.getcwd()+'/static/image'
 
+app_key = u'552ff435c35340d1e6fc8be8'
+master_secret = u'd3ee34a00b9ba28b73da6853'
+

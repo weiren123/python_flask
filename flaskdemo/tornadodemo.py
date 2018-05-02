@@ -18,7 +18,7 @@ application = tornado.web.Application([
 # application.add_handlers(r"^a\.com$", [
 #     (r"/", DomainHandler),
 # ])
-application.add_handlers(r"^\$", [
+application.add_handlers(r"^a.com.ss\$", [
     (r"/", DomainHandler),
 ])
 application.add_handlers(r"^(www/.)?a/.com$", [(r"/", DomainHandler),])
