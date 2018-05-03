@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 import os
 
+import re
 from flask.json import jsonify
 
 import push_example
@@ -18,44 +19,45 @@ def changeImage():
                 new_name = file.replace(".jpg_", ".jpg")
                 os.rename(os.path.join(path, file), os.path.join(new_path, new_name))
 def analysisInfo():
-     # currentPrice = ""
-     # json = getConinInfo()
-     # btcprice = json['BTC']
-     # eosprice = json['EOS']
-     # adaprice = json['ADA']
+    # currentPrice = ""
+    json = getConinInfo()
+    btcprice = json['BTC']
+    eosprice = json['EOS']
+    adaprice = json['ADA']
+    print(btcprice)
+    btcValue = str.replace(eosprice,"$","")
+    btcpriceV = float(btcValue*6.48)
+    # btcpriceM = round(btcpriceV*6.48)
+    # print(btcpriceM)
+    univalent = 116
+    changeUnivallent = btcpriceV
+    # changePrice = ""
+    # d_value = ""
+    # priceType = False
+    currentPrice = univalent * 3
+    print("currentPrice:"+str(currentPrice))
+    changePrice =changeUnivallent * 3
+    print("changePrice:" + str(changePrice))
+    if changeUnivallent > univalent:
+     priceType = True
+    else:
+     priceType = False
 
-
-     univalent = 116
-     changeUnivallent = 116
-     # changePrice = ""
-     # d_value = ""
-     # priceType = False
-     currentPrice = univalent * 3
-     print("currentPrice:"+str(currentPrice))
-     changePrice =changeUnivallent * 3
-     print("changePrice:" + str(changePrice))
-     if changeUnivallent > univalent:
-         priceType = True
-     else:
-         priceType = False
-
-     if priceType == True:
-         d_value = abs(changePrice - currentPrice)
-         print("↑d_value:" + str(d_value))
-     else:
-         d_value = abs(changePrice - currentPrice)
-         print("↓d_value:" + str(d_value))
-     if priceType == False and d_value == 0:
-         print("→→→→→→→→→→→→→→")
-         push_example.platfrom_msg()
+    if priceType == True:
+     d_value = abs(changePrice - currentPrice)
+     print("↑d_value:" + str(d_value))
+    else:
+     d_value = abs(changePrice - currentPrice)
+     print("↓d_value:" + str(d_value))
+    if priceType == False and d_value == 0:
+     print("→→→→→→→→→→→→→→")
+     push_example.platfrom_msg()
 def getConinInfo():
     coin_info = pd.read_html(API)[0]
     coininfo = coin_info.loc[
         coin_info['Name'].isin(['BTC Bitcoin', 'EOS EOS', 'ADA Cardano', 'QTUM Qtum', 'STEEM Steem'])]
-    # print(str(coininfo))
     price = coininfo['Price']
     array = price.values
-    # print(array)
     prices = {
         'BTC':array[0],
         'EOS': array[1],
@@ -63,7 +65,6 @@ def getConinInfo():
         'QTUM': array[3],
         'STEEM': array[4],
     }
-    print(prices)
     return prices
 #递归算法
 def factorial(n):
