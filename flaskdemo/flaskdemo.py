@@ -6,7 +6,9 @@ from io import BytesIO
 
 import config
 from models import User,Question,Answer
+
 from exts import db
+
 app = Flask(__name__)
 app.config.from_object(config)
 db.init_app(app)
@@ -67,7 +69,7 @@ def regist():
                 return "两次输入的密码不一致，请核对后重新输入！"
             else:
                 user = User(telephon = telephon,username =username,password = password1,age = "18",usertype = "1",
-                            sex = "0" )
+                            sex = "0",birthday = "1991-08-09" )
                 db.session.add(user)
                 db.session.commit()
                 return redirect(url_for('login'))
@@ -153,11 +155,11 @@ def startimage():
     return jsonify(response), 200
 @app.route("/image")
 def test_qrcode():
-    img = Image.open('static/image/v1.jpg')
+    img = Image.open('static/image/sp.svg')
     byte_io = BytesIO()
     img.save(byte_io, 'PNG')
     byte_io.seek(0)
     return send_file(byte_io, mimetype='image/png')
 if __name__ == '__main__':
-    # app.run(host='0.0.0.0', port=5000)
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
+    # app.run()

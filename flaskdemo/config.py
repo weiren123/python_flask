@@ -5,9 +5,9 @@ DEBUG = True
 SECRET_KEY = os.urandom(24)
 HOSTNAME = '127.0.0.1'
 PORT = '3306'
-DATABASE = 'flaskdemo'
-USERNAME = 'root'
-PASSWORD = '1234'
+DATABASE = 'sudu'
+USERNAME = 'admin'
+PASSWORD = 'admin'
 DB_URI = 'mysql://{}:{}@{}:{}/{}?charset=utf8'.format(USERNAME,PASSWORD,
 HOSTNAME,PORT,DATABASE)
 SQLALCHEMY_DATABASE_URI = DB_URI

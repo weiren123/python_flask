@@ -14,7 +14,7 @@ app.config.from_object(config)
 db.init_app(app)
 
 
-
+#20181027
 photos = UploadSet('photos', IMAGES)
 configure_uploads(app, photos)
 patch_request_class(app)  # set maximum file size, default is 16MB
@@ -168,7 +168,7 @@ def my_context_processor():
 def logout():
     session.pop('user_id')
     return redirect(url_for('login'))
-@app.route('/question/',methods=['POST'])
+@app.route('/question/',methods=['GET'])
 @login_required
 def question():
         # print(str(request.headers().))

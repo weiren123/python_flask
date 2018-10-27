@@ -1,4 +1,4 @@
-from exts import db
+
 from datetime import datetime
 # class User(db.Model):
 #     __tablename__ = 'user'
@@ -6,6 +6,9 @@ from datetime import datetime
 #     telephon = db.Column(db.String(50),nullable=False)
 #     username = db.Column(db.Text(100),nullable=False)
 #     password = db.Column(db.Text(100),nullable=False)
+from exts import db
+
+
 class Question(db.Model):
     __tablename__ = 'question'
     id = db.Column(db.Integer(),primary_key=True,autoincrement=True)

@@ -4,7 +4,7 @@ import os
 import re
 from flask.json import jsonify
 
-import push_example
+# import push_example
 import pandas as pd
 from config import API
 def changeImage():
@@ -51,7 +51,7 @@ def analysisInfo():
      print("↓d_value:" + str(d_value))
     if priceType == False and d_value == 0:
      print("→→→→→→→→→→→→→→")
-     push_example.platfrom_msg()
+     # push_example.platfrom_msg()
 def getConinInfo():
     coin_info = pd.read_html(API)[0]
     coininfo = coin_info.loc[
