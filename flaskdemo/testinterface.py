@@ -28,7 +28,7 @@ def login_required(f):
                 'code': "302",
                 'msg':"login"
             }
-            # return redirect(url_for('login', next=request.url))
+            # return redirect(url_for('login', next=request.py.url))
             return jsonify(response),200
         return f(*args, **kwargs)
     return decorated_function
@@ -50,7 +50,7 @@ def index():
 @app.route('/questionlist/',methods=['POST'])
 def getQuestionList():
     userid = session.get('user_id')
-    # userid = request.form.get('user_id')
+    # userid = request.py.form.get('user_id')
     question = Question.query.filter(Question.answer_id == userid).all()
     if question:
         response = {
@@ -106,7 +106,7 @@ def getUserList():
         return jsonify(response), 200
 @app.route('/login/',methods=['GET','POST'])
 def login():
-    # if request.method == 'POST'| request.module == 'GET':
+    # if request.py.method == 'POST'| request.py.module == 'GET':
         telephone = request.form.get('telephone')
         password = request.form.get('password')
 
@@ -171,7 +171,7 @@ def logout():
 @app.route('/question/',methods=['GET'])
 @login_required
 def question():
-        # print(str(request.headers().))
+        # print(str(request.py.headers().))
         data = request.data
         strs = data.decode()
         datas = json.loads(strs)

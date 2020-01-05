@@ -1,9 +1,10 @@
-from PIL import Image
+# from PIL import Image
+from django.core.serializers import json
 from flask import Flask, jsonify, render_template, request, url_for, session, redirect, g, send_file
 from functools import wraps
 
 from io import BytesIO
-
+import json
 import config
 from models import User,Question,Answer
 
@@ -153,13 +154,19 @@ def startimage():
         'img': byte_io
     }
     return jsonify(response), 200
-@app.route("/image")
-def test_qrcode():
-    img = Image.open('static/image/sp.svg')
-    byte_io = BytesIO()
-    img.save(byte_io, 'PNG')
-    byte_io.seek(0)
-    return send_file(byte_io, mimetype='image/png')
+# @app.route("/image")
+# def test_qrcode():
+#     img = Image.open('static/image/sp.svg')
+#     byte_io = BytesIO()
+#     img.save(byte_io, 'PNG')
+#     byte_io.seek(0)
+#     return send_file(byte_io, mimetype='image/png')
+
+@app.route("/test",methods=['POST'])
+def test_requestJson():
+    f_name = open('static/assets/HQCouponListData.json', 'r', encoding='utf-8').read()
+    return f_name
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='192.168.1.191', port=5000)
+    # app.run(host='192.168.199.246', port=5000)
     # app.run()

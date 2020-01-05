@@ -1,0 +1,149 @@
+{
+  "errno" : 0,
+  "data" : {
+    "products":
+    [{
+        "cartId": 101,
+        "status": 0,
+        "goodsId": 1181161,
+        "goodsName": "非自粘无纺布墙纸 背景墙墙纸 满贴大气细腻精压无纺壁纸AB搭配款",
+        "picUrl": "https://scsjoos.oss-cn-beijing.aliyuncs.com/raz8j60vh19ja0xvmdw1.jpg",
+        "smallUrl": "",
+        "productStock": "3",
+        "productId": 666,
+        "specification": "红色,红色,40m,红色,40m,红色,红色,40m,红色,40m",
+        "retailPrice": 209,
+        "formerPrice": 259,
+        "number": 3,
+        "goodsType": "0",
+        "group":{
+        },
+        "activity":{
+        }
+    },
+    {
+        "cartId": 102,
+        "status": 1,
+        "goodsId": 1181246,
+        "goodsName": "超厚遮光百搭麻料",
+        "picUrl": "https://scsjoos.oss-cn-beijing.aliyuncs.com/h88ts20vopu2kx80z5a4.jpg",
+        "smallUrl": "",
+        "productStock": "3",
+        "productId": 666,
+        "specification": "红色,40m",
+        "retailPrice": 252,
+        "formerPrice": 300,
+        "number": 1,
+        "goodsType": "1",
+        "group":{
+        },
+        "activity":{
+            "beginTime": "2019-11-13 13:44:50",
+            "EndTime": "2019-11-25 13:44:50",
+            "sprikePrice" : 90
+        }
+    },
+    {
+        "cartId": 103,
+        "status": 0,
+        "goodsId": 1181425,
+        "goodsName": "角阀全铜玫瑰金复古欧式三角阀4-四分加厚大流量八字阀F601",
+        "picUrl": "https://scsjoos.oss-cn-beijing.aliyuncs.com/z403diqlgfg08p71l0ta.jpg",
+        "smallUrl": "",
+        "productStock": "30",
+        "productId": 666,
+        "specification": "红色,40m",
+        "retailPrice": 66,
+        "formerPrice": 66,
+        "number": 1,
+        "goodsType": "1",
+        "group":{
+        },
+        "activity":{
+            "beginTime": "2019-11-25 13:44:50",
+            "EndTime": "2019-11-28 13:44:50",
+            "sprikePrice" : 90
+        }
+    },
+    {
+        "cartId": 104,
+        "status": 1,
+        "goodsId": 1181182,
+        "goodsName": "西部白橡德国原装进口强化复合飞美地板EPL026",
+        "picUrl": "https://scsjoos.oss-cn-beijing.aliyuncs.com/ci0m1cpl3wcc1oivzjiq.jpg",
+        "smallUrl": "",
+        "productStock": "3",
+        "productId": 666,
+        "specification": "红色,40m",
+        "retailPrice": 268,
+        "formerPrice": 268,
+        "number": 1,
+        "goodsType": "2",
+        "group":{
+            "completeNumber": 3,
+            "groupPrice": 200,
+            "beginTime": "2019-11-13 13:44:50",
+            "EndTime": "2019-11-25 13:44:50",
+            "returnPrice": 23
+        },
+        "activity":{
+        }
+    },
+    {
+        "cartId": 105,
+        "status": 1,
+        "goodsId": 1181212,
+        "goodsName": "美标CEAS5375羡思智能一体化座厕302mm坑距/CEAS5375羡思智能一体化座厕400mm坑距",
+        "picUrl": "https://scsjoos.oss-cn-beijing.aliyuncs.com/26qrpbb7db37mh1tfwpg.jpg",
+        "smallUrl": "",
+        "productStock": "5",
+        "productId": 666,
+        "specification": "红色,40m",
+        "retailPrice": 4999,
+        "formerPrice": 4699,
+        "number": 1,
+        "goodsType": "2",
+        "group":{
+            "completeNumber": 1,
+            "groupPrice": 4000,
+            "beginTime": "2019-11-13 13:44:50",
+            "EndTime": "2019-11-19 13:44:50",
+            "returnPrice": 50
+        },
+        "activity":{
+        }
+    }],
+    "disabledGoods":[{
+        "cartId": 106,
+        "goodsId": 1181257,
+        "goodsName": "高级北欧简约现代美式 NF-01麻料",
+        "picUrl": "https://scsjoos.oss-cn-beijing.aliyuncs.com/44ip7c4ckvq1av1gp2v0.jpg",
+        "smallUrl": "",
+        "productId": 666,
+        "reason": "库存不足",
+        "type": "0"
+    },
+    {
+        "cartId": 107,
+        "goodsId": 1181254,
+        "goodsName": "高级NF-016彩色麻窗帘",
+        "picUrl": "https://scsjoos.oss-cn-beijing.aliyuncs.com/cji59ozzabwmid0r3r18.jpg",
+        "smallUrl": "",
+        "productId": 666,
+        "reason": "库存不足",
+        "type": "0"
+    },
+    {
+        "cartId": 108,
+        "goodsId": 1181801,
+        "goodsName": "非自粘无纺布墙纸 背景墙纸 满贴大气细腻精压无纺壁纸AB搭配款",
+        "picUrl": "https://scsjoos.oss-cn-beijing.aliyuncs.com/t127ast4i4r8vb0s8h3g.jpg",
+        "smallUrl": "",
+        "productId": 666,
+        "reason": "库存不足",
+        "type": "1"
+    }]
+    
+  },
+  "errmsg" : "成功"
+}
